@@ -15,10 +15,11 @@ MVP
 - As a user, I want to be able to sign in
 - As a user, I want to be able to sign out
 - As a user, I want to be able to sign up
-- As a user, I want to make a team
-- As a user, I want to add team wins
-- As a user, I want to add team losses
-- As a user, I want to be able to players to a team
+- As a user, I want to create a team
+- As a user, I want to create a player
+- As a user, I want to read a player
+- As a user, I want to update a players win/loss stats
+- As a user, I want to be able to delete a player
 - As a user, I want to add player wins
 - As a user, I want to add player losses
 

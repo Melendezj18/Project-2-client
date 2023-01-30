@@ -67,19 +67,18 @@ export const deletePlayer = (id) => {
 		method: 'DELETE',
 		headers: 
         {
-			Authorization: `Bearer ${store.userToken}`,
-		},
+            Authorization: `Bearer ${store.userToken}`,
+        },
 	})
 }
 
-// Team Actions
 export const indexTeam = () => {
 	return fetch('http://localhost:8000/teams', 
     {
 		headers: 
         {
-			'Authorization': `Bearer ${store.userToken}`
-		}
+            'Authorization': `Bearer ${store.userToken}`
+        }
 	})
 }
 
@@ -88,8 +87,8 @@ export const showTeam = (id) => {
     {
 		headers: 
         {
-			Authorization: `Bearer ${store.userToken}`,
-		},
+            Authorization: `Bearer ${store.userToken}`,
+        },
 	})
 }
 

@@ -1,7 +1,10 @@
 .hide {
     display: none;
 }
-
+.landing-container {
+    justify-content: center;
+    text-align: center;
+}
 
 /* .modal-content {
     background-color: #fefefe;

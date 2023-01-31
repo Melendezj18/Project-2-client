@@ -72,7 +72,8 @@ export const deletePlayer = (id) => {
 	})
 }
 
-export const indexTeam = () => {
+//Team Actions
+export const indexTeams = () => {
 	return fetch('http://localhost:8000/teams', 
     {
 		headers: 

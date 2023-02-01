@@ -19,7 +19,7 @@ import {
     onFailure,
     onSignInSuccess,
     onIndexTeamSuccess,
-    onIndexPlayerSuccess
+    onShowTeamSuccess
 } from './ui.js'
 
 const signUpContainer = document.querySelector('#sign-up-container')
@@ -58,13 +58,13 @@ signInContainer.addEventListener('submit', (event) => {
 		.then(indexTeams)
 		.then((res) => res.json())
 		.then((res) => onIndexTeamSuccess(res.teams))
-		.then(indexPlayers)
-		.then((res) => res.json())
-		.then((res) => onIndexPlayerSuccess(res.players))
+		// .then(indexPlayers)
+		// .then((res) => res.json())
+		// .then((res) => onIndexPlayerSuccess(res.players))
 		.catch(onFailure)
 })
 
-//create
+//create team
 addTeam.addEventListener('submit', (event) => {
 	event.preventDefault()
     console.log("im trying to create team")
@@ -81,24 +81,57 @@ addTeam.addEventListener('submit', (event) => {
 //update
 
 
-//create
-addPlayer.addEventListener('submit', (event) => {
-    event.preventDefault()
-    console.log("im trying to create team")
-    const teamData = event.target.getAttribute[team._id].value
-	const playerData = {
-		player: 
-        {
-			firstName: event.target['firstNameInput'].value,
-			lastName: event.target['lastNameInput'].value,
-            wins: event.target['winsInput'].value,
-            losses: event.target['lossesInput'].value,
+//create player
+// addPlayer.addEventListener('submit', (event) => {
+//     event.preventDefault()
+//     console.log("im trying to create player")
+//     const teamData = event.target.getAttribute("data-id").value
+// 	const playerData = {
+// 		player: 
+//         {
+// 			firstName: event.target['firstNameInput'].value,
+// 			lastName: event.target['lastNameInput'].value,
+//             wins: event.target['winsInput'].value,
+//             losses: event.target['lossesInput'].value,
+// 		},
+// 	}
+
+//     console.log(playerData)
+// 	createPlayer(teamData, playerData)
+//         .then((res) => res.json())
+//         .then((res) => onCreatePlayerSuccess(res.players))
+//         .catch(onFailure)
+// })
+
+///show
+indexTeamContainer.addEventListener('click', (event) => {
+	const id = event.target.getAttribute('data-id')
+	if (!id) return
+	showTeam(id)
+		.then((res) => res.json())
+		.then((res) => {
+			onShowTeamSuccess(res.team)
+		})
+		.catch(onFailure)
+})
+
+//update
+showTeamContainer.addEventListener('submit', (event) => {
+	event.preventDefault()
+	const id = event.target.getAttribute('data-id')
+	const teamData = {
+		team: {
+			name: event.target['name'].value
 		},
 	}
+	updateTeam(teamData, id)
+		.catch(onFailure)
+})
 
-    console.log(playerData)
-	createPlayer(teamData, playerData)
-        .then((res) => res.json())
-        .then((res) => onCreatePlayerSuccess(res.players))
-        .catch(onFailure)
+//delete
+showTeamContainer.addEventListener('click', (event) => {
+	const id = event.target.getAttribute('data-id')
+	if (!id) return
+	deleteTeam(id)
+		.catch(onFailure)
 })

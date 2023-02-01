@@ -17,43 +17,24 @@
 <body>
 
   <div id="message-container"></div>
-  
-    <div id="landing-container">
+
+    <div id="landing-container" class="landing-container">
       <h1>Team Tracker</h1>
-
         <form id="sign-in-container">
-
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
             </div>
-
             <div class="mb-3">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword" name="password">
             </div>
-
             <button type="submit" class="btn btn-primary" id="sign-in-button">Sign In</button>
-
         </form>
-
-        <form id="sign-up-container">
-          <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
-          </div>
-
-          <div class="mb-3">
-              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword" name="password">
-          </div>
-
-          <button type="submit" class="btn btn-primary">Create Account</button>
-        </form>
-
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal">Sign Up</button> -->
-
-      <!-- <div id="sign-up-modal">
+        <!-- Sign Up Modal Button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testModal">Sign Up</button>
+        <!-- Sign Up Modal -->
+      <div id="sign-up-modal">
         <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -64,38 +45,69 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-                <div class="modal-body">
+              <div class="modal-body">
+                <!-- Sign Up Form -->
+                <form id="sign-up-container">
+                    <div class="mb-3">
+                      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
+                    </div>
 
-                  <form id="sign-up-container">
-                      <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email">
-                      </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" name="password">
+                    </div>
 
-                      <div class="mb-3">
-                          <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                          <input type="password" class="form-control" id="inputPassword" name="password">
-                      </div>
-
-                      <button type="submit" class="btn btn-primary">Create Account</button>
-                    </form>
-                </div>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                  </form>
+              </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </div>
-
     <div class="hide" id="index-container">
         <h1>Team Tracker</h1>
         <div class="nav-bar">
-            <button type="submit" class="add-team">Add Team</button>
+            <!-- Team Modal trigger button -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTeamModal">
+            Add Team
+          </button>
         </div>
-        <div class="teams-containers">
-            <div id="players"></div>
+                    <!-- Modal -->
+          <div class="modal fade" id="addTeamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Team</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- Team Form -->
+                  <form id="add-team-container">
+                    <div class="form-group">
+                      <label for="teamNameInput">Team Name</label>
+                      <input type="text" class="form-control" id="teamNameInput" placeholder="Enter team name">
+                    </div>
+                    <div class="form-group">
+                      <label for="originInput">Origin</label>
+                      <input type="text" class="form-control" id="originInput" placeholder="Enter origin">
+                    </div>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div id="teams-containers">
         </div>
     </div>
     

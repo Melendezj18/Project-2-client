@@ -27,6 +27,21 @@ export const signIn = (data) => {
 }
 
 // Player Actions
+
+export const createPlayer = (data) => {
+	return fetch(`http://localhost:8000/players`, 
+    {
+		method: 'POST',
+		headers: 
+        {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+            'Authorization': `Bearer ${store.userToken}`,
+		},
+		body: JSON.stringify(data),
+	})
+}
+
 export const indexPlayers = () => {
 	return fetch(`http://localhost:8000/players`, 
     {
@@ -73,6 +88,20 @@ export const deletePlayer = (id) => {
 }
 
 //Team Actions
+export const createTeam = (data) => {
+	return fetch(`http://localhost:8000/teams`, 
+    {
+		method: 'POST',
+		headers: 
+        {
+			'Accept': 'application/json',
+			'Content-Type': 'application/json',
+            'Authorization': `Bearer ${store.userToken}`,
+		},
+		body: JSON.stringify(data),
+	})
+}
+
 export const indexTeams = () => {
 	return fetch('http://localhost:8000/teams', 
     {
